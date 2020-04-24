@@ -1,0 +1,49 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:168409036194:function:d298b030-4690-4101-b208-72c9a1d92877:Release_0"
+        },
+        "interfaces": []
+      }
+    },
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "containsAds": false,
+      "isChildDirected": false,
+      "isExportCompliant": true,
+      "locales": {
+        "en-US": {}
+      },
+      "usesPersonalInfo": false
+    },
+    "publishingInformation": {
+      "category": "EDUCATION_AND_REFERENCE",
+      "distributionCountries": [],
+      "isAvailableWorldwide": true,
+      "locales": {
+        "en-US": {
+          "description": "Improve as a Spanish listener and translator with Wiki Learn Spanish. Alexa will ask for your preference from a variety of Wikipedia categories and read you the Spanish and English versions of an article within that category. You can choose whether you want Alexa to alternate between language or read each version straight through. After you finish, you can ask for another article to continue learning about language and the world!",
+          "examplePhrases": [
+            "Alexa, open Wiki Learn Spanish",
+            "Alexa, open Wiki Learn Spanish and tell me about nature.",
+            "Alexa, open Wiki Learn Spanish and plan my lesson."
+          ],
+          "keywords": [
+            "Spanish",
+            "language",
+            "learning",
+            "listening",
+            "comprehension",
+            "culture",
+            "comparison"
+          ],
+          "name": "WikiLearn Spanish",
+          "summary": "Learn about culture, history, and the world using Wikipedia as a translator and build your intermediate Spanish skills toward improved listening comprehension."
+        }
+      },
+      "testingInstructions": "This is a straightforward skill in that it uses text stored in the index.js file for its content. It uses session persistence to store the number of times the user has accessed each article category to give the user a more diversified experience."
+    }
+  }
+}

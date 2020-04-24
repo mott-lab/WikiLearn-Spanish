@@ -1,0 +1,243 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "wiki learn spanish",
+      "intents": [
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PauseIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ResumeIntent",
+          "samples": []
+        },
+        {
+          "name": "PlanMyLesson",
+          "slots": [
+            {
+              "name": "category",
+              "type": "category",
+              "samples": [
+                "tell me about {category}",
+                "read me an article about {category}",
+                "give me an article about {category}",
+                "{category}"
+              ]
+            },
+            {
+              "name": "readingStyle",
+              "type": "readingStyle",
+              "samples": [
+                "read {readingStyle}",
+                "{readingStyle}"
+              ]
+            }
+          ],
+          "samples": [
+            "start lesson about {category} by reading {readingStyle}",
+            "tell me about {category} ",
+            "read me an article about {category} {readingStyle}",
+            "read me an article",
+            "start my lesson",
+            "plan my lesson"
+          ]
+        },
+        {
+          "name": "ResetLessonCounters",
+          "slots": [],
+          "samples": [
+            "reset lesson counters"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "nature"
+              }
+            },
+            {
+              "name": {
+                "value": "trends"
+              }
+            },
+            {
+              "name": {
+                "value": "events"
+              }
+            },
+            {
+              "name": {
+                "value": "places"
+              }
+            },
+            {
+              "name": {
+                "value": "people"
+              }
+            }
+          ],
+          "name": "category"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "alternating paragraphs",
+                "synonyms": [
+                  "paragraph by paragraph"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "full article"
+              }
+            }
+          ],
+          "name": "readingStyle"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "PlanMyLesson",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "category",
+              "type": "category",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1219236595536.1390685332545"
+              },
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.1219236595536.1390685332545.734975564167"
+                }
+              ]
+            },
+            {
+              "name": "readingStyle",
+              "type": "readingStyle",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1219236595536.485898324345"
+              },
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.1219236595536.485898324345.552760415575"
+                }
+              ]
+            }
+          ],
+          "delegationStrategy": "ALWAYS"
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.643391179290.1079754159456",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What category of article would you like to learn about?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.643391179290.1079754159456.875763749650",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "I\u0027m sorry, but that is not a category I know. I have articles about sports, politics, art, culture, and food."
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.405926123622.1271353394371",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Would you like me to read each article paragraph by paragraph, or each full article?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.405926123622.1271353394371.307626048776",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "I don\u0027t understand. Please say either \u0027paragraph by paragraph\u0027 or \u0027full article\u0027 to select."
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1219236595536.485898324345",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Would you like me to switch between each language paragraph by paragraph, or read each language\u0027s full article?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1219236595536.485898324345.552760415575",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "I don\u0027t understand. Please say either \u0027paragraph by paragraph\u0027 or \u0027full article\u0027 to select."
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1219236595536.1390685332545",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "I have articles about people, places, events, and nature. What kind of article would you like?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1219236595536.1390685332545.734975564167",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "I\u0027m sorry, that is not a category I know. I have articles about people, places, events, and nature."
+          }
+        ]
+      }
+    ]
+  },
+  "version": "20"
+}

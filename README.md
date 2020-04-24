@@ -1,0 +1,3 @@
+# WikiLearn Spanish
+
+WikiLearn Spanish is an Alexa skill designed to help Spanish language learners with their reading comprehension. Users can choose an category (people, places, events, or nature), and WikiLearn Spanish will read the summary from a Wikipedia article fitting the selection. Alexa alternates between the Spanish and English articles paragraph by paragraph until the summary is complete.
